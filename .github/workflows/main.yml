@@ -41,7 +41,7 @@ jobs:
         python -m flake8
         cd backend/
         python manage.py test
-    # - name: Set up environment variables
+    # - name: Set up environment variables,
     #   env:
         # DJANGO_SECRET_KEY: 
     #   run: |
