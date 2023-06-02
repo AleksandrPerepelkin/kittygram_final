@@ -41,11 +41,11 @@ jobs:
         python -m flake8
         cd backend/
         python manage.py test
-    - name: Set up environment variables
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-      run: |
-        echo $DJANGO_SECRET_KEY
+    # - name: Set up environment variables
+    #   env:
+        # DJANGO_SECRET_KEY: 
+    #   run: |
+    #     echo $DJANGO_SECRET_KEY
 
   build_and_push_to_docker_hub:
     runs-on: ubuntu-latest
