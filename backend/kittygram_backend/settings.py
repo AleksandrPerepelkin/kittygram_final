@@ -2,13 +2,13 @@
 import os
 from pathlib import Path
 
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+secret_key = os.getenv('SECRET_KEY', 'django-insecure-123')
 
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY') не получилось у меня
 # сделать по красоте и код запихнуть в контейнер,
