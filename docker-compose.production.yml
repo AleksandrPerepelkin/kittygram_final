@@ -7,28 +7,23 @@ volumes:
 
 services:
   db:
-    image: postgres:13
+    image: postgres:13.10
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgres/data
   backend:
-    image: wuldpwnz/kittygram_backend
+    build: ./backend/
     env_file: .env
     volumes:
       - static:/static/
-      - media:/app/media/
+      - media:/media
   frontend:
     env_file: .env
-    image: wuldpwnz/kittygram_frontend
-    command: cp -r /app/build/. /static/
-    volumes:
-      - static:/static
+    build: ./frontend/
   gateway:
-    image: wuldpwnz/kittygram_gateway
-    env_file: .env
+    build: ./nginx/
+    volumes:
+      - static:/staticfiles/
     ports:
       - 9000:80
-    volumes:
-      - static:/static
-      - media:/app/media/
       
