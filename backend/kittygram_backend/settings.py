@@ -8,7 +8,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-secret_key = os.getenv('SECRET_KEY', 'django-insecure-123')
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-123')
 
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY') не получилось у меня
 # сделать по красоте и код запихнуть в контейнер,
