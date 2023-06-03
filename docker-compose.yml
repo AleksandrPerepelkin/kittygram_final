@@ -16,13 +16,14 @@ services:
     env_file: .env
     volumes:
       - static:/static/
-      - media:/media
+      - media:/app/media/
   frontend:
     env_file: .env
     build: ./frontend/
   gateway:
     build: ./nginx/
-    volumes:
-      - static:/staticfiles/
     ports:
       - 9000:80
+    volumes:
+      - static:/static
+      - media:/app/media/

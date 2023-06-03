@@ -12,18 +12,18 @@ services:
     volumes:
       - pg_data:/var/lib/postgres/data
   backend:
-    build: ./backend/
+    image: wuldpwnz/kittygram_backend
     env_file: .env
     volumes:
       - static:/static/
       - media:/media
   frontend:
     env_file: .env
-    build: ./frontend/
+    image: wuldpwnz/kittygram_frontend
   gateway:
-    build: ./nginx/
-    volumes:
-      - static:/staticfiles/
+    image: wuldpwnz/kittygram_gateway
     ports:
       - 9000:80
-      
+    volumes:
+      - static:/static
+      - media:/media
