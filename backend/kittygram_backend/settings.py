@@ -12,8 +12,6 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-123')
 
 # SECRET_KEY = os.getenv('DJANGO_SECRET_KEY') не получилось у меня
 # сделать по красоте и код запихнуть в контейнер,
-# почему то пок
-# django.core.exceptions.ImproperlyConfigured: The SECRET_KEY setting must not be empty.
 
 DEBUG = True
 
